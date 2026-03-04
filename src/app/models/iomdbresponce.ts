@@ -1,7 +1,9 @@
 export interface IOMDBResponce {
-    Title: string;
-    Year: string;
-    Director: string;
-    Poster: string;
-    Error: string;
+    imbdID?: string;
+    Title?: string;
+    Year?: string;
+    Director?: string;
+    Poster?: string;
+    Response: string;
+    Error?: string;
 }
