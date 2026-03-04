@@ -1,1 +1,16 @@
-<p>search works!</p>
+<div class="search-container">
+  <h2>Search for a Movie</h2>
+  
+  <div class="form-group">
+    <input 
+      #movieTitle 
+      type="text" 
+      placeholder="Enter movie title (e.g. Inception)"
+      (keyup.enter)="onSearch(movieTitle.value)" 
+    />
+    
+    <button (click)="onSearch(movieTitle.value)">
+      Search
+    </button>
+  </div>
+</div>
