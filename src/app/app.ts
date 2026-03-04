@@ -10,5 +10,5 @@ import { Details } from './details/details';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('movie-finder');
+  protected readonly title = signal('MovieFinderApp_CA');
 }

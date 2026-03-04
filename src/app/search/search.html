@@ -1,15 +1,15 @@
-<div class="search-container">
-  <h2>Search for a Movie</h2>
-  
-  <div class="form-group">
+<div class="container mt-5 text-center">
+  <h1 class="display-5 fw-bold mb-4">Movie Search</h1>
+  <div class="input-group mb-3 mx-auto" style="max-width: 600px;">
+    
     <input 
       #movieTitle 
       type="text" 
-      placeholder="Enter movie title (e.g. Inception)"
-      (keyup.enter)="onSearch(movieTitle.value)" 
-    />
-    
-    <button (click)="onSearch(movieTitle.value)">
+      class="form-control form-control-lg" 
+      placeholder="Search for movies, TV shows..."
+      (keyup.enter)="onSearch(movieTitle.value)">
+      
+    <button class="btn btn-danger px-4" type="button" (click)="onSearch(movieTitle.value)">
       Search
     </button>
   </div>

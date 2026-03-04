@@ -1,1 +1,21 @@
-<p>details works!</p>
+<div class="container mt-4">
+  @if (movieService.movie(); as movieData) {
+    
+    @if (movieData.Response === "True") {
+      <div class="card shadow-lg" style="max-width: 18rem;">
+        <img [src]="movieData.Poster" class="card-img-top" [alt]="movieData.Title">
+        <div class="card-body">
+          <h5 class="card-title">{{ movieData.Title }}</h5>
+          <p class="card-text text-secondary">{{ movieData.Year }}</p>
+        </div>
+      </div>
+    } 
+    
+    @else {
+      <div class="alert alert-danger mt-3" role="alert">
+        <strong>Error:</strong> {{ movieData.Error }}
+      </div>
+    }
+
+  }
+</div>

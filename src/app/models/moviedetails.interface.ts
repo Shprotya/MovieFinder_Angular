@@ -1,4 +1,4 @@
-export interface IOMDBResponce {
+export interface Response {
     imbdID?: string;
     Title?: string;
     Year?: string;

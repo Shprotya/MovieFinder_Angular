@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MovieapiService } from '../movie-apiservice';
+import { inject } from '@angular/core';
+import { Response } from '../models/moviedetails.interface';
 
 @Component({
   selector: 'app-details',
@@ -6,4 +9,6 @@ import { Component } from '@angular/core';
   templateUrl: './details.html',
   styleUrl: './details.css',
 })
-export class Details {}
+export class Details {
+  public movieService = inject(MovieapiService);
+}
