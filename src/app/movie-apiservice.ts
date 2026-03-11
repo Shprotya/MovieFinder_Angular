@@ -13,6 +13,7 @@ export class MovieapiService {
   private readonly _key = "4bbb8ce2";
 
   public movies = signal<MovieResults[] | null>(null);
+  public movie = signal<MovieResults | null>(null);
 
   constructor() { }
 
@@ -26,6 +27,19 @@ export class MovieapiService {
         error: (err) => {
           console.error('Error fetching movies:', err);
           this.movies.set(null);
+        }
+      });
+  }
+
+  getMovie(id: string) {
+    const url = `${this._siteURL}?i=${id}&apikey=${this._key}`;
+    this.http.get<MovieResults>(url)
+      .pipe(take(1))
+      .subscribe({
+        next: (data) => this.movie.set(data),
+        error: (err) => {
+          console.error('Error fetching movie:', err);
+          this.movie.set(null);
         }
       });
   }

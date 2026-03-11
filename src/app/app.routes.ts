@@ -7,5 +7,5 @@ import { Details } from './details/details';
 export const routes: Routes = [
     { path: '', component: Home },
     { path: 'about', component: About },
-    { path: 'movie/:id', component: Details }
+    { path: 'details/:id', component: Details }
 ];
