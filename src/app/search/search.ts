@@ -15,7 +15,7 @@ export class Search {
 
   onSearch(title: string): void {
     if (title.trim()) {
-      this.movieService.getMovie(title);
+      this.movieService.getMovies(title);
     }
   }
 }
