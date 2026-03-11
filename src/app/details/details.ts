@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieapiService } from '../movie-apiservice';
 import { inject } from '@angular/core';
-import { Response } from '../models/moviedetails.interface';
 
 @Component({
   selector: 'app-details',

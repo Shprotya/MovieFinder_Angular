@@ -1,5 +1,5 @@
 export interface Response {
-    imbdID?: string;
+    imdbID?: string; 
     Title?: string;
     Year?: string;
     Director?: string;
