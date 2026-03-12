@@ -1,9 +1,10 @@
-<nav>
-    <a routerLink="/" routerLinkActive="active">Home</a> |
-    <a routerLink="/about">About</a>
+<nav class="navbar navbar-expand-lg bg-white border-bottom px-4">
+    <a class="navbar-brand fw-500" routerLink="/">MovieFinder</a> <p>Yelyzaveta Kareieva - S00267553</p>
+    <div class="navbar-nav ms-auto">
+        <a class="nav-link" routerLink="/" routerLinkActive="fw-bold text-dark"
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-link" routerLink="/about" routerLinkActive="fw-bold text-dark">About</a>
+    </div>
 </nav>
 
-<h1>{{title()}}</h1>
-<p>Yelyzaveta Kareieva - S00267553</p>
-
-<router-outlet/>
+<router-outlet />
