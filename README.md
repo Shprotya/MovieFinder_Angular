@@ -1,59 +1,53 @@
-# MovieFinder
+# 🎬 MovieFinderApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+> An Angular web application for searching movies and TV shows using the OMDb API.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📋 Table of Contents
 
-```bash
-ng serve
-```
+- [About](#about)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [API Reference](#api-reference)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## About
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+MovieFinderApp is a single-page Angular application that allows users to search for movies and TV shows by title. Users can browse paginated search results, click into any title for full details including cast, plot, ratings, and box office figures, and navigate between pages seamlessly using Angular's built-in routing.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Features
 
-```bash
-ng generate --help
-```
+- **Search** — Search movies and TV shows by title using the OMDb API
+- **Pagination** — Browse up to 10 results per page with next/previous controls
+- **Movie Details** — View full details: poster, plot, cast, director, genre, rating, and box office
+- **Responsive** — Mobile-friendly layout using Bootstrap 5
+- **Routing** — Clean URL navigation between pages (`/`, `/details/:id`, `/about`)
 
-## Building
+---
 
-To build the project run:
+## Tech Stack
 
-```bash
-ng build
-```
+| Technology | Version |
+|---|---|
+| [Angular](https://angular.io/) | 19 |
+| [TypeScript](https://www.typescriptlang.org/) | 5+ |
+| [Bootstrap](https://getbootstrap.com/) | 5 |
+| [OMDb API](https://www.omdbapi.com/) | — |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## API Reference
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+This project uses the [OMDb API](https://www.omdbapi.com/).
 
-```bash
-ng test
-```
+| Endpoint | Description |
+|---|---|
+| `?s={title}&page={n}` | Search movies by title, paginated |
+| `?i={imdbID}` | Get full details for a specific movie |
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> **Note:** The API returns a maximum of 10 results per page. Use the `&page=` parameter to paginate.
