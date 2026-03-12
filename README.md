@@ -8,7 +8,6 @@
 
 - [About](#about)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [API Reference](#api-reference)
 
