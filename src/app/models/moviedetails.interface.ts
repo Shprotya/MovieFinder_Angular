@@ -11,4 +11,14 @@ export interface MovieResults {
     imdbID: string;
     Type: string;
     Poster: string;
+    Rated?: string;
+    Runtime?: string;
+    Genre?: string;
+    Plot?: string;
+    Director?: string;
+    Actors?: string;
+    Language?: string;
+    Country?: string;
+    imdbRating?: string;
+    BoxOffice?: string;
 }

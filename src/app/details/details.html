@@ -1,11 +1,55 @@
-<div class="container mt-4">
-  @if (movieService.movie(); as movieData) {
-    <div class="card shadow-lg" style="max-width: 18rem;">
-      <img [src]="movieData.Poster" class="card-img-top" [alt]="movieData.Title">
-      <div class="card-body">
-        <h5 class="card-title">{{ movieData.Title }}</h5>
-        <p class="card-text text-secondary">{{ movieData.Year }}</p>
+<div class="container py-4">
+  <button class="btn btn-outline-secondary btn-sm mb-4" (click)="goBack()">
+    ← Back
+  </button>
+
+  @if (movieService.movie(); as m) {
+  <div class="row g-4">
+
+    <div class="col-auto">
+      <img [src]="m.Poster" [alt]="m.Title" style="width: 220px; border-radius: 8px; object-fit: cover;">
+    </div>
+
+    <div class="col">
+      <h2 class="fw-bold mb-1">{{ m.Title }}</h2>
+      <p class="text-secondary mb-3">{{ m.Year }} · {{ m.Rated }} · {{ m.Runtime }}</p>
+
+      <div class="mb-3">
+        @for (genre of m.Genre?.split(','); track genre) {
+        <span class="badge bg-light text-dark border me-1">{{ genre.trim() }}</span>
+        }
+      </div>
+
+      <p class="mb-4">{{ m.Plot }}</p>
+
+      <div class="row row-cols-2 g-2" style="max-width: 500px;">
+        <div class="col">
+          <p class="text-secondary small mb-0">Director</p>
+          <p class="mb-0">{{ m.Director }}</p>
+        </div>
+        <div class="col">
+          <p class="text-secondary small mb-0">Cast</p>
+          <p class="mb-0">{{ m.Actors }}</p>
+        </div>
+        <div class="col">
+          <p class="text-secondary small mb-0">Language</p>
+          <p class="mb-0">{{ m.Language }}</p>
+        </div>
+        <div class="col">
+          <p class="text-secondary small mb-0">Country</p>
+          <p class="mb-0">{{ m.Country }}</p>
+        </div>
+        <div class="col">
+          <p class="text-secondary small mb-0">IMDb Rating</p>
+          <p class="mb-0">⭐ {{ m.imdbRating }} / 10</p>
+        </div>
+        <div class="col">
+          <p class="text-secondary small mb-0">Box Office</p>
+          <p class="mb-0">{{ m.BoxOffice ?? 'N/A' }}</p>
+        </div>
       </div>
     </div>
+
+  </div>
   }
 </div>
