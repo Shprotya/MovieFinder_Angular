@@ -1,23 +1,25 @@
 <div class="container py-4">
-  @if (movieService.movies(); as movies) {
-  <p class="text-secondary small mb-3">{{ movies.length }} results</p>
-  <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
-    @for (movie of movies; track movie.imdbID) {
-    <div class="col">
-      <a [routerLink]="['/details', movie.imdbID]" class="text-decoration-none">
-        <div class="card h-100 border shadow-none">
-          <img [src]="movie.Poster" [alt]="movie.Title" class="card-img-top"
-            style="aspect-ratio: 2/3; object-fit: cover;">
-          <div class="card-body p-2">
-            <p class="card-title mb-0 fw-500 text-dark small text-truncate">{{ movie.Title }}</p>
-            <p class="text-secondary mb-0" style="font-size: 12px;">{{ movie.Year }} · {{ movie.Type }}</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    }
-  </div>
+  @if (movieService.movies() === null) {
+    <p class="text-secondary small mb-3">Please enter a search term</p>
+  } @else if (movieService.movies()!.length === 0) {
+    <p class="text-secondary small mb-3">No movies found</p>
   } @else {
-  <p class="text-secondary small mb-3">Please enter a search term</p>
+    <p class="text-secondary small mb-3">{{ movieService.movies()!.length }} results</p>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
+      @for (movie of movieService.movies()!; track movie.imdbID) {
+        <div class="col">
+          <a [routerLink]="['/details', movie.imdbID]" class="text-decoration-none">
+            <div class="card h-100 border shadow-none">
+              <img [src]="movie.Poster" [alt]="movie.Title" class="card-img-top"
+                style="aspect-ratio: 2/3; object-fit: cover;">
+              <div class="card-body p-2">
+                <p class="card-title mb-0 fw-500 text-dark small text-truncate">{{ movie.Title }}</p>
+                <p class="text-secondary mb-0" style="font-size: 12px;">{{ movie.Year }} · {{ movie.Type }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
   }
 </div>

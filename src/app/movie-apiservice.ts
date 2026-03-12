@@ -23,10 +23,15 @@ export class MovieapiService {
     this.http.get<SearchResults>(url)
       .pipe(take(1))
       .subscribe({
-        next: (data) => this.movies.set(data.Search),
+        next: (data) => {
+          if (data.Response === "True") {
+            this.movies.set(data.Search);
+          } else {
+            this.movies.set([]); 
+          }
+        },
         error: (err) => {
-          console.error('Error fetching movies:', err);
-          this.movies.set(null);
+          this.movies.set([]);  
         }
       });
   }
