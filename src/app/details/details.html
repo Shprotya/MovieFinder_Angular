@@ -6,11 +6,12 @@
   @if (movieService.movie(); as m) {
   <div class="row g-4">
 
-    <div class="col-auto">
-      <img [src]="m.Poster" [alt]="m.Title" style="width: 220px; border-radius: 8px; object-fit: cover;">
+    <div class="col-12 col-lg-auto text-center">
+      <img [src]="m.Poster" [alt]="m.Title"
+        style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover;">
     </div>
 
-    <div class="col">
+    <div class="col-12 col-lg">
       <h2 class="fw-bold mb-1">{{ m.Title }}</h2>
       <p class="text-secondary mb-3">{{ m.Year }} · {{ m.Rated }} · {{ m.Runtime }}</p>
 
